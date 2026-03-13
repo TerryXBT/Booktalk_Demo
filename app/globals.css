@@ -1,26 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* ── Book Talk Design Tokens ─────────────────────────────────────────── */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Colors */
+  --color-bt-white:        #FFFFFF;
+  --color-bt-warm:         #F7F4F0;
+  --color-bt-charcoal:     #2C2C2C;
+  --color-bt-accent:       #A09080;
+  --color-bt-border:       #E5E0D8;
+  --color-bt-muted:        #7A7065;
+  --color-bt-light:        #CFC8BE;
+
+  /* Category palette (placeholder image colors) */
+  --color-cat-paper:       #D4C9B8;
+  --color-cat-pens:        #B8C9D4;
+  --color-cat-folders:     #C9D4B8;
+  --color-cat-desk:        #D4B8C9;
+  --color-cat-tape:        #D4D0B8;
+  --color-cat-staplers:    #B8C9C9;
+
+  /* Typography */
+  --font-inter:            "Inter", sans-serif;
+  --font-serif:            "Instrument Serif", serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ── Base Styles ─────────────────────────────────────────────────────── */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter);
+  background-color: #FFFFFF;
+  color: #2C2C2C;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ── Typography Helpers ──────────────────────────────────────────────── */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+/* ── Smooth Transitions ──────────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* ── Scrollbar (subtle) ──────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F4F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #E5E0D8;
+  border-radius: 3px;
 }
